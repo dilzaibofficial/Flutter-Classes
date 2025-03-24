@@ -1,4 +1,5 @@
-import 'package:day1/home_page.dart';
+import 'package:day1/pages/home_page.dart';
+import 'package:day1/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,15 +7,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  int day = 30;
-  String name = 'dilzaib';
-
-  
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      // home: HomePage(),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+      },
     );
   }
 }
